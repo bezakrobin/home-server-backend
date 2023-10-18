@@ -5,7 +5,7 @@ from flask import jsonify
 def disable_task(task_id):
     conn = None
     try:
-        conn = sqlite3.connect('../db/db.db')
+        conn = sqlite3.connect('db/db.db')
         cursor = conn.cursor()
 
         cursor.execute('SELECT id FROM tasks WHERE id = ?', (task_id,))

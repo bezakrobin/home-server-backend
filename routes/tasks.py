@@ -11,35 +11,35 @@ tasks_bp = Blueprint('tasks', __name__)
 
 
 @tasks_bp.route('/create_task', methods=['POST'])
-def create_earner_route():
+def create_task_route():
     return create_task()
 
 
 @tasks_bp.route('/get_task/<int:task_id>', methods=['GET'])
-def get_earner_route(task_id):
+def get_task_route(task_id):
     return get_task(task_id)
 
 
-@tasks_bp.route('/get_all_earners', methods=['GET'])
-def get_all_earners_route():
+@tasks_bp.route('/get_all_tasks', methods=['GET'])
+def get_all_tasks_route():
     return get_all_tasks()
 
 
-@tasks_bp.route('/delete_earner/<int:task_id>', methods=['DELETE'])
-def delete_earner_route(task_id):
+@tasks_bp.route('/delete_task/<int:task_id>', methods=['DELETE'])
+def delete_task_route(task_id):
     return delete_task(task_id)
 
 
-@tasks_bp.route('/update_earner/<int:task_id>', methods=['PUT'])
-def update_earner_route(task_id):
+@tasks_bp.route('/update_task/<int:task_id>', methods=['PUT'])
+def update_task_route(task_id):
     return update_task(task_id)
 
 
-@tasks_bp.route('/disable_earner/<int:task_id>', methods=['PUT'])
-def disable_earner_route(task_id):
+@tasks_bp.route('/disable_task/<int:task_id>', methods=['PUT'])
+def disable_task_route(task_id):
     return disable_task(task_id)
 
 
-@tasks_bp.route('/activate_earner/<int:task_id>', methods=['PUT'])
-def activate_earner_route(task_id):
+@tasks_bp.route('/activate_task/<int:task_id>', methods=['PUT'])
+def activate_task_route(task_id):
     return activate_task(task_id)

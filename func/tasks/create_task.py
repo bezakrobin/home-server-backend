@@ -5,7 +5,7 @@ from flask import request, jsonify
 def create_task():
     conn = None
     try:
-        conn = sqlite3.connect('../db/db.db')
+        conn = sqlite3.connect('db/db.db')
         cursor = conn.cursor()
 
         task_data = request.get_json()

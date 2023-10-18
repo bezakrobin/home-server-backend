@@ -5,8 +5,8 @@ def init_database(database_name='db/db.db'):
     with sqlite3.connect(database_name) as conn:
         cursor = conn.cursor()
 
-        create_earners_table_sql = '''
-            CREATE TABLE IF NOT EXISTS earners (
+        create_services_table_sql = '''
+            CREATE TABLE IF NOT EXISTS services (
                 id INTEGER PRIMARY KEY,
                 name TEXT,
                 svg_data TEXT,
@@ -15,7 +15,7 @@ def init_database(database_name='db/db.db'):
             )
         '''
 
-        cursor.execute(create_earners_table_sql)
+        cursor.execute(create_services_table_sql)
 
         create_tasks_table_sql = '''
             CREATE TABLE IF NOT EXISTS tasks (

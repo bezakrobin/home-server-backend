@@ -5,7 +5,7 @@ from flask import jsonify
 def get_all_tasks():
     conn = None
     try:
-        conn = sqlite3.connect('../db/db.db')
+        conn = sqlite3.connect('db/db.db')
         cursor = conn.cursor()
 
         cursor.execute('SELECT * FROM tasks')
