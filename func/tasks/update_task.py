@@ -39,6 +39,10 @@ def update_task(task_id):
             update_query += 'status = ?, '
             update_params.append(update_data['status'])
 
+        if 'service_id' in update_data:
+            update_query += 'service_id = ?, '
+            update_params.append(update_data['service_id'])
+
         update_query = update_query[:-2] + ' WHERE id = ?'
         update_params.append(task_id)
 

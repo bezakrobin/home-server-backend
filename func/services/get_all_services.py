@@ -12,15 +12,14 @@ def get_all_services():
         services = cursor.fetchall()
 
         services_list = []
+        print(services)
         for service in services:
             services_list.append({
                 'id': service[0],
                 'name': service[1],
-                'subtasks': service[2],
+                'svg_data': service[2],
                 'active': bool(service[3]),
                 'created': service[4],
-                'finished': service[5],
-                'status': service[6]
             })
 
         return jsonify({'services': services_list})

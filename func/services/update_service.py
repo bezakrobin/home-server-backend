@@ -17,13 +17,11 @@ def update_service(service_id):
         data = request.get_json()
 
         name = data.get('name')
-        subtasks = data.get('subtasks')
+        svg_data = data.get('svg_data')
         active = data.get('active')
-        finished = data.get('finished')
-        status = data.get('status')
 
-        cursor.execute('UPDATE services SET name=?, subtasks=?, active=?, finished=?, status=? WHERE id = ?',
-                       (name, subtasks, active, finished, status, service_id))
+        cursor.execute('UPDATE services SET name=?, subtasks=?, active=? WHERE id = ?',
+                       (name, svg_data, active, service_id))
         conn.commit()
 
         return jsonify({'message': f'Service with ID {service_id} updated'})

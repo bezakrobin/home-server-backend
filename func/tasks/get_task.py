@@ -14,7 +14,7 @@ def get_task(task_id):
         if task:
             task_dict = {
                 'id': task[0],
-                'earner_id': task[1],
+                'service_id': task[1],
                 'name': task[2],
                 'subtasks': task[3],
                 'active': task[4],

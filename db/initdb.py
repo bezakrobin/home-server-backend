@@ -20,7 +20,7 @@ def init_database(database_name='db/db.db'):
         create_tasks_table_sql = '''
             CREATE TABLE IF NOT EXISTS tasks (
                 id INTEGER PRIMARY KEY,
-                earner_id INTEGER,
+                service_id INTEGER,
                 name TEXT,
                 subtasks JSON,
                 active BOOLEAN DEFAULT 0,

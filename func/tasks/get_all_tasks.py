@@ -15,7 +15,7 @@ def get_all_tasks():
         for task in tasks:
             task_dict = {
                 'id': task[0],
-                'earner_id': task[1],
+                'service_id': task[1],
                 'name': task[2],
                 'subtasks': task[3],
                 'active': task[4],
