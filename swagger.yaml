@@ -1,0 +1,133 @@
+openapi: 3.0.0
+info:
+  title: Make me rich API
+  description: API documentation for Make me rich service
+  version: 1.0.0
+tags:
+  - name: Earners
+    description: Operations related to earners
+paths:
+  /create_earner:
+    post:
+      summary: Create an earner
+      tags:
+        - Earners
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                svg_data:
+                  type: string
+                active:
+                  type: boolean
+      responses:
+        200:
+          description: Earner created successfully
+        404:
+          description: Error creating earner
+
+  /get_earner/{earner_id}:
+    get:
+      summary: Get an earner by ID
+      tags:
+        - Earners
+      parameters:
+        - name: earner_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: ID of the earner to retrieve
+      responses:
+        200:
+          description: Earner retrieved successfully
+        404:
+          description: Earner not found
+
+  /get_all_earners:
+    get:
+      summary: Get all earners
+      tags:
+        - Earners
+      responses:
+        200:
+          description: List of all earners
+        404:
+          description: No earners found
+
+  /delete_earner/{earner_id}:
+    delete:
+      summary: Delete an earner by ID
+      tags:
+        - Earners
+      parameters:
+        - name: earner_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: ID of the earner to delete
+      responses:
+        200:
+          description: Earner deleted successfully
+        404:
+          description: Earner not found
+
+  /update_earner/{earner_id}:
+    put:
+      summary: Update an earner by ID
+      tags:
+        - Earners
+      parameters:
+        - name: earner_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: ID of the earner to update
+      responses:
+        200:
+          description: Earner updated successfully
+        404:
+          description: Earner not found
+
+  /disable_earner/{earner_id}:
+    put:
+      summary: Disable an earner by ID
+      tags:
+        - Earners
+      parameters:
+        - name: earner_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: ID of the earner to disable
+      responses:
+        200:
+          description: Earner disabled successfully
+        404:
+          description: Earner not found
+
+  /activate_earner/{earner_id}:
+    put:
+      summary: Activate an earner by ID
+      tags:
+        - Earners
+      parameters:
+        - name: earner_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: ID of the earner to activate
+      responses:
+        200:
+          description: Earner activated successfully
+        404:
+          description: Earner not found
